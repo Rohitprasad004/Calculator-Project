@@ -1,77 +1,51 @@
-*, *::before, *::after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body {
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  font-family: sans-serif;
 }
-.bg-container{
-    height: 100vh;
-    background: #2b2d42;
+
+.calculator {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  width: 250px;
 }
-.container-calculator{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+
+#display {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  text-align: right;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
-.calculator > *{
-    color: black;
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
-.display > *{
-    color: white;
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: background 0.2s;
 }
-.calculator{
-    display: grid;
-    grid-template-columns: repeat(4, 75px);
-    grid-template-rows: 160px repeat(5, 75px);
-    background: url('../img/gatito.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 15px;
-    border-radius: 32px;
-    box-shadow: 15px 10px 0px 5px #00000033;
+
+button:hover {
+  background: #d0d0d0;
 }
-.calculator button{
-    cursor: pointer;
-    margin: 5px;
-    padding: 0;
-    border-radius: 32px;
-    font-size: 1.5em;
-    border: none;
-    background: #E8C39E;
-    box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 10px 1px #cfab87;
-    user-select: none;
-    transition: filter 200ms ease-out;
-}
-.calculator button:hover{
-    filter: brightness(90%);
-}
-.calculator button:active{
-    background: #42392d;
-}
-.calculator button:focus{
-    outline: none;
-}
-.calculator .display{
-    grid-column: 1 / -1;
-    padding: 1rem;
-    display: flex;
-    margin: 10px 10px 20px;
-    flex-direction: column;
-    align-items: flex-end;
-    background: #363636;
-    text-align: right;
-    justify-content: space-between;
-    border-radius: 32px;
-    word-break: break-all;
-    box-shadow: 0px 0px 0px 10px #00000033;
-}
-.calculator .col-2{
-    grid-column: span 2;
-}
-#valor-actual{
-    font-size: 1.5em;
-}
-#valor-anterior{
-    font-size: 2em;
+
+.zero {
+  grid-column: span 2;
 }
